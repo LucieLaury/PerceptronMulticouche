@@ -12,18 +12,25 @@ public class Main {
 
         //args[0] = 5,3,2;
         String tailles_Couches = args[0];
-        String[] couches = tailles_Couches.split(",");
-        List<Integer> couchesInt = Arrays.stream(couches).map(Integer::parseInt).toList();
+        String[] couchesStr = tailles_Couches.split(",");
+        int[] couches = new int[couchesStr.length];
+        for(int i = 0; i<couchesStr.length; i++){
+            couches[i] = Integer.parseInt(couchesStr[i]);
+        }
         double tauxApprentissage = Double.parseDouble(args[1]);
         String fonction = args[2];
 
+        MLP mlp;
         switch (fonction){
-            case "sig" :
-                break;
             case "th":
+                mlp = new MLP(couches, tauxApprentissage, new TangenteHyperbolique());
+                break;
+            case "sig" :
+            default:
+                mlp = new MLP(couches, tauxApprentissage, new Sigmoide());
                 break;
         }
-
+        mlp.runPerceptron(10, tableET);
 
 
 
