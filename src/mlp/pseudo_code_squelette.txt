@@ -1,0 +1,11 @@
+
+mlp = nouveau mlp (couches, taux d'apprentissage, fonction)   // Crée le MLP avec ces trois paramètres
+input = valeurs d'entrée        // définit des valeurs de départ (des réels)
+
+output = mlp.execute(input)         // traite les valeurs d'entrée avec une fonction donnée (dans le constructeur)
+                                        ca permet de proposer un résultat de sortie au problème
+
+taux_erreur = mlp.backPropagate(input, sortie_souhaitée) // Permet de mesurer le taux d'erreur entre l'input et la
+                                                             sortie souhaitée (apprentissage supervisé)
+
+
