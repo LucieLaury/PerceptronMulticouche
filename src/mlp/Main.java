@@ -30,7 +30,7 @@ public class Main {
                 mlp = new MLP(couches, tauxApprentissage, new Sigmoide());
                 break;
         }
-        mlp.runPerceptron(10, tableET);
+        //mlp.runPerceptron(10, tableET);
 
 
 
