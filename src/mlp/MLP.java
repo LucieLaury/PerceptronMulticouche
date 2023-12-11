@@ -172,17 +172,6 @@ public class MLP  {
         return error;
     }
 
-    private void runPerceptron(int nbIt, double[][] tab) {
-        double retour = Double.MAX_VALUE;
-        Random rand = new Random();
-        double[][] temp_table = tab.clone();
-        for (int i = 0; i < nbIt ; i++) {
-
-            backPropagate( null, temp_table[rand.nextInt(tab.length)]);
-        }
-    }
-
-
     /**
      * @return LearningRate
      */
