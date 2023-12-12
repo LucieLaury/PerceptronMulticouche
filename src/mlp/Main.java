@@ -52,7 +52,7 @@ public class Main {
 
         // Par défaut, deux entrées, un de calcul et un de sortie
         // Ces valeurs seront modifiées pour certaines applications (XOR et les deux sorties notamment)
-        int[] layers = new int[]{2,2,2};
+        int[] layers = new int[]{2,1,2};
         double learningRate = 0.1;
         MLP mlp = new MLP(layers,learningRate,tf);
 
@@ -70,10 +70,6 @@ public class Main {
     }
 
     public static void learn(MLP mlp, double[][] currentTable, int nbSorties) {
-
-        // Variables nécessaires au bon fonctionnement du programme
-        double[] tableTaux = new double[]{Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE, Double.MAX_VALUE};
-        double currentTaux;
 
         // APPRENTISSAGE
         for (int i = 0 ; i < 100000 ; i++) {

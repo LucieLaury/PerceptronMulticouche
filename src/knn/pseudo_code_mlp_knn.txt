@@ -1,0 +1,18 @@
+pour n_itérations :
+    apprendre(mlp, imagettes_connues)
+
+    tester(mlp, imagette_inconnue)
+
+
+
+
+apprendre (mlp, imagettes) :
+    pour chaque imagette :
+        mlp.backPropagate(liste_pixels, imagette.getEtiquette())  // Les nuances de gris de l'imagette sont l'input
+                                                                et la sortie attendue est donc l'étiquette (le chiffre)
+
+tester(mlp, imagette) :
+    resultat = mlp.execute(liste_pixels_imagette);
+    si resultat != étiquette :
+        retourner false
+    sinon vrai

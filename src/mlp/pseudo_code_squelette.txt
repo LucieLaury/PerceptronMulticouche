@@ -1,11 +1,27 @@
 
 mlp = nouveau mlp (couches, taux d'apprentissage, fonction)   // Crée le MLP avec ces trois paramètres
-input = valeurs d'entrée        // définit des valeurs de départ (ici, deux doubles qui sont soit 1.0 ou -1.0)
 
-pour nb_itérations :
-    taux_erreur = mlp.backPropagate(input, sortie_souhaitée) // la sortie sohaitée est un tableau de double contenant un -1.0 ou 1.0
-                                                             // on veut garder ici le taux d'erreur le plus petit
-                                                             // pour voir si le programme apprend bien
 
+pour nb_itérations :  // On alterne entre apprentissage et tests sur les exemples
+    apprendre(mlp,table_testée,nbSorties) // Le MLP apprend à résoudre la table
+    tester(mlp,table_testée,nbSorties)  // Le MLP exécute chaque élément de la table
+
+
+apprendre(mlp, table, nbSorties) :
+    pour n itérations :
+        pour chaque élement de la table :
+            mlp.backPropagate(deux premiers éléments, derniers_éléments) // Les derniers élements sont les derniers éléments
+                                                             de la table (selon le nbSorties)
+
+tester(mlp, table, nbSorties) :
+    pour chaque élément du tableau :
+        resultat = mlp.execute(deux premiers éléments)
+        si resultat != resultat_attendu :     // resultat_attendu correspond à la sortie ou aux sorties de la table
+            false
+        else :
+            true
+    si tout est valide :
+        retourner true
+        sinon false
 
 

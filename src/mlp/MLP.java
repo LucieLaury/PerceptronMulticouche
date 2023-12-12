@@ -7,7 +7,7 @@ import java.io.ObjectOutputStream;
 import java.util.Random;
 
 
-interface TransferFunction  {
+public interface TransferFunction  {
     /**
      * Function de transfert
      * @param value entrée
