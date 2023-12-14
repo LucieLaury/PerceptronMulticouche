@@ -7,6 +7,7 @@ import mlp.TransferFunction;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Random;
 
 import static knn.Imagette.chargerImagettes;
 
@@ -38,25 +39,39 @@ public class MLPvsKNN {
             valide = test(mlp, imagettes_apprentissage);
             System.out.println("learn + test fini");
             i++;
+            // Mélanger les données
+            Random rand = new Random();
+            for (int j = 0; j < imagettes_apprentissage.length - 1; j++) {
+                // Générer un index aléatoire entre 0 et i inclus
+                int indexAleatoire = rand.nextInt(imagettes_apprentissage.length);
+
+                // Échanger les éléments à l'index actuel et à l'index aléatoire
+                Imagette temp = imagettes_apprentissage[i];
+                imagettes_apprentissage[i] = imagettes_apprentissage[indexAleatoire];
+                imagettes_apprentissage[indexAleatoire] = temp;
+            }
+
         }
     }
 
     public static void learn(MLP mlp, Imagette[] imagettes) {
-
-        for (Imagette imagette : imagettes) {
-            double[] pixels = new double[imagette.getHeight()*imagette.getWidth()];
-            for (int i = 0 ; i < imagette.getHeight() ; i++) {
-                for (int j = 0; j < imagette.getWidth() ; j++) {
-                    if (i > 0) {
-                        pixels[(i * imagette.getHeight()) + j] = imagette.getPixel(i, j)/255;
-                    } else {
-                        pixels[j] = imagette.getPixel(i, j)/255;
+        for (int nbIt = 0 ; nbIt < 10000 ; nbIt++) {
+            for (Imagette imagette : imagettes) {
+                double[] pixels = new double[imagette.getHeight() * imagette.getWidth()];
+                for (int i = 0; i < imagette.getHeight(); i++) {
+                    for (int j = 0; j < imagette.getWidth(); j++) {
+                        if (i > 0) {
+                            pixels[(i * imagette.getHeight()) + j] = imagette.getPixel(i, j) / 255;
+                        } else {
+                            pixels[j] = imagette.getPixel(i, j) / 255;
+                        }
                     }
                 }
+                double[] attendu = new double[]{0., 0., 0., 0., 0., 0., 0., 0., 0., 0.};
+                attendu[imagette.getEtiquette()] = 1.;
+                mlp.backPropagate(pixels, attendu);
+
             }
-            double[] attendu = new double[]{0.,0.,0.,0.,0.,0.,0.,0.,0.,0.};
-            attendu[imagette.getEtiquette()] = 1.;
-            mlp.backPropagate(pixels,attendu);
         }
         System.out.println("learn fini");
     }
@@ -86,28 +101,20 @@ public class MLPvsKNN {
         }
         // Vérification de chaque élément (approximation à 0.999 / 1.001 ou 0.001 / -0.001)
         for (int i = 0 ; i < resultat.size() ; i++) {
-            boolean valide = true;
-            for (int j = 0; j < resultat.get(i).length;i++) {
+            int indice_pg = -1;
+            double pg_double = Double.MIN_VALUE;
+            for (int j = 0; j < resultat.get(i).length; j++) {
                 double res_temp = resultat.get(i)[j];
                 double res_att_temp = resultat_attendu.get(i)[j];
-                // Si le résultat attendu est 0
-                if (res_att_temp == 0.) {
-                    if (!(res_temp >= -0.001 && res_temp <= 0.001)) {
-                        valide = false;
-                        break;
-                    }
-                // Sinon si 1
-                } else if (res_att_temp == 1.){
-                    if (!((res_temp >= 0.999 && res_temp <= 1.001))) {
-                        valide = false;
-                        break;
-                    }
-                } else {
-                    //System.out.println("ce print n'est pas normal (erreur dans les sorties souhaitées)");
-                    return false;
+                // Retient l'indice le plus grand
+                if (pg_double < resultat.get(i)[j]) {
+                    indice_pg = j;
+                    pg_double = resultat.get(i)[j];
+
                 }
             }
-            if (valide) {
+            // Si le plus grand des doubles des 10 résultats à le même indice que la sortie attendue
+            if (resultat_attendu.get(i)[indice_pg] == 1.) {
                 //System.out.println("imagette VALID = "+ Arrays.toString(resultat.get(i)));
                 compteurValide++;
             } else {
