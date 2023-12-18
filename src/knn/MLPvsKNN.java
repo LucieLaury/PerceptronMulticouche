@@ -26,9 +26,12 @@ public class MLPvsKNN {
             default -> new Sigmoide();
         };
 
+        // Afficher les résultats de KNN
+        // Statistiques.stat_knn(new KNN(new Donnees(imagettes)), imagettes_tests, 1);
+
         // MLP
         int[] layers = new int[]{imagettes[0].getHeight() * imagettes[0].getWidth(), 50, 50 ,10};
-        double learningRate = 0.1;
+        double learningRate = 0.5;
         MLP mlp = new MLP(layers, learningRate, tf);
 
         int i = 0;
@@ -43,25 +46,31 @@ public class MLPvsKNN {
     }
 
     public static void learn(MLP mlp, Imagette[] imagettes) {
+
         double tauxErreur = 0.0;
-        for (int nbIt = 0; nbIt < 10; nbIt++) {
+        // 10 apprentissages (10 * nombre d'images)
+        //for (int nbIt = 0; nbIt < 10; nbIt++) {
+            // Pour chaque image
             for (Imagette imagette : imagettes) {
+                // Pour chaque pixel de l'image
                 double[] pixels = new double[imagette.getHeight() * imagette.getWidth()];
                 for (int i = 0; i < imagette.getHeight(); i++) {
                     for (int j = 0; j < imagette.getWidth(); j++) {
                         if (i > 0) {
-                            pixels[(i * imagette.getHeight()) + j] = imagette.getPixel(i, j) / 255;
+                            pixels[(i * imagette.getHeight()) + j] = (double) imagette.getPixel(i, j) / 255;
                         } else {
-                            pixels[j] = imagette.getPixel(i, j) / 255;
+                            pixels[j] = (double) imagette.getPixel(i, j) / 255;
                         }
                     }
                 }
+                // On s'attend à ce que le résultat soit un tableau de 0.0 excepté à l'index correspondant
+                // à l'étiquette qui est égal à 1
                 double[] attendu = new double[]{0., 0., 0., 0., 0., 0., 0., 0., 0., 0.};
                 attendu[imagette.getEtiquette()] = 1.;
                 tauxErreur += mlp.backPropagate(pixels, attendu);
 
             }
-        }
+        //}
         System.out.println("erreur : "+tauxErreur);
     }
 
@@ -77,9 +86,9 @@ public class MLPvsKNN {
             for (int i = 0; i < imagette.getHeight(); i++) {
                 for (int j = 0; j < imagette.getWidth(); j++) {
                     if (i > 0) {
-                        pixels[(i * imagette.getHeight()) + j] = imagette.getPixel(i, j) / 255;
+                        pixels[(i * imagette.getHeight()) + j] = (double) imagette.getPixel(i, j) / 255;
                     } else {
-                        pixels[j] = imagette.getPixel(i, j) / 255;
+                        pixels[j] = (double) imagette.getPixel(i, j) / 255;
                     }
                 }
             }
@@ -104,9 +113,9 @@ public class MLPvsKNN {
                 compteurValide++;
             }
             // Condition d'arrêt == si il y'a moins de 95% de réussite
-            if (i - compteurValide > resultat.size() * 0.5) {
+            if (i - compteurValide > resultat.size() * 0.02) {
                 System.out.println("Bonnes reponses : " + compteurValide + "/" + i);
-                System.out.println("Il y'a moins de 95% de reussite donc c'est un ECHEC");
+                System.out.println("Il y'a moins de 98% de reussite donc c'est un ECHEC");
                 return false;
             }
         }
