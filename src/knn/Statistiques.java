@@ -14,6 +14,10 @@ public class Statistiques {
             System.out.println(occurrences);
         } else if (algo instanceof KNN) {
             /// A FAIRE
+            int compteur = 0;
+            int nbValides = 0;
+            // Vérifier que la liste d'entiers retournée par KNN soit composée uniquement? de l'entier attendu.
+
         }
     }
 }
