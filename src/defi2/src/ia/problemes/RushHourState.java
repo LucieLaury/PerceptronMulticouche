@@ -210,20 +210,33 @@ public class RushHourState extends State {
 
         if (v.getOrientation() == "horizontal") {
             if (isLegal(RushHour.FWD, v, mouvement)) {
+                    plateau[pos[0][0]][pos[0][1]] = false;
                     pos[0][1]+=mouvement;
+                    plateau[pos[0][0]][pos[0][1]] = true;
+                    plateau[pos[1][0]][pos[1][1]] = false;
                     pos[1][1]+=mouvement;
+                    plateau[pos[1][0]][pos[1][1]] = true;
                 if (v.getNbCasesOccupees() == 3) {
+                    plateau[pos[2][0]][pos[2][1]] = false;
                     pos[2][1]+=mouvement;
-               }
+                    plateau[pos[2][0]][pos[2][1]] = true;
+                }
             }
         } else if (v.getOrientation() == "vertical") {
                 if (isLegal(RushHour.FWD, v, mouvement)) {
+                    plateau[pos[0][0]][pos[0][1]] = false;
                     pos[0][0]-=mouvement;
+                    plateau[pos[0][0]][pos[0][1]] = true;
+                    plateau[pos[1][0]][pos[1][1]] = false;
                     pos[1][0]-=mouvement;
+                    plateau[pos[1][0]][pos[1][1]] = true;
                 if (v.getNbCasesOccupees() == 3) {
-                    pos[3][0]-=mouvement;
+                    plateau[pos[2][0]][pos[2][1]] = false;
+                    pos[2][0]-=mouvement;
+                    plateau[pos[2][0]][pos[2][1]] = true;
                 }
-            }// update les places occupées....
+            }
+
         }
 	}
 
@@ -240,19 +253,31 @@ public class RushHourState extends State {
 
         if (v.getOrientation() == "horizontal") {
             if (isLegal(RushHour.FWD, v, mouvement)) {
-                    pos[0][1]-=mouvement;
-                    pos[1][1]-=mouvement;
                 if (v.getNbCasesOccupees() == 3) {
+                    plateau[pos[2][0]][pos[2][1]] = false;
                     pos[2][1]-=mouvement;
+                    plateau[pos[2][0]][pos[2][1]] = true;
                }
+                    plateau[pos[1][0]][pos[1][1]] = false;
+                    pos[1][1]-=mouvement;
+                    plateau[pos[1][0]][pos[1][1]] = true;
+                    plateau[pos[0][0]][pos[0][1]] = false;
+                    pos[0][1]-=mouvement;
+                    plateau[pos[0][0]][pos[0][1]] = true;
             }
         } else if (v.getOrientation() == "vertical") {
                 if (isLegal(RushHour.FWD, v, mouvement)) {
-                    pos[0][0]+=mouvement;
-                    pos[1][0]+=mouvement;
-                if (v.getNbCasesOccupees() == 3) {
-                    pos[3][0]+=mouvement;
+                    if (v.getNbCasesOccupees() == 3) {
+                        plateau[pos[2][0]][pos[2][1]] = false;
+                        pos[2][0]+=mouvement;
+                        plateau[pos[2][0]][pos[2][1]] = true;
                 }
+                        plateau[pos[1][0]][pos[1][1]] = false;
+                        pos[1][0]+=mouvement;
+                        plateau[pos[1][0]][pos[1][1]] = true;
+                        plateau[pos[0][0]][pos[0][1]] = false;
+                        pos[0][0]+=mouvement;
+                        plateau[pos[0][0]][pos[0][1]] = true;
             }
         }
 	}

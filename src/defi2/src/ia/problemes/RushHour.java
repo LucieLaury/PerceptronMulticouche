@@ -21,6 +21,7 @@ public class RushHour extends SearchProblem {
         new RushHourState(); //todo
         // voiture rouge (v1, dans la premiere case du tableau)
         // position (3,5),(3,6)
+        // trouver si il existe une voiture à la
         
 
     /**
