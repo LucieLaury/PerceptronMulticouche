@@ -1,4 +1,4 @@
-package ia.framework.common;
+package defi2.src.ia.framework.common;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,6 @@ public abstract class BaseProblem {
     /**
      *  <p>La liste de toutes les actions
      *  les classes concrètes doivent le renseigner </p>
-     *   Voir {@link ia.problemes.Vacuum} ou {@link ia.problemes.EightPuzzle}
      */
     
     protected static Action[] ACTIONS = null;

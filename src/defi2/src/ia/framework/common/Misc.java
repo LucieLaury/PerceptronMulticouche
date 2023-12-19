@@ -1,4 +1,4 @@
-package ia.framework.common;
+package defi2.src.ia.framework.common;
 
 import java.util.Collection;
 import java.util.stream.Collectors;

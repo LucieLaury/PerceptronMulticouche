@@ -1,4 +1,4 @@
-package ia.framework.recherche;
+package defi2.src.ia.framework.recherche;
 
 /**
  * Ajoute la notion d'heuristique aux états de certains problèmes

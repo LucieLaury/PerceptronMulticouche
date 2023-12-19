@@ -1,9 +1,7 @@
-package ia.framework.jeux;
+package defi2.src.ia.framework.jeux;
 
 
-import ia.framework.common.Action;
-import ia.framework.jeux.Game;
-import ia.framework.jeux.GameState;
+import defi2.src.ia.framework.common.Action;
 
 /**
  * Définie un joueur

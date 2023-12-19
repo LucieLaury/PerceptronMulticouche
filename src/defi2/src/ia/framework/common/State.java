@@ -1,4 +1,4 @@
-package ia.framework.common;
+package defi2.src.ia.framework.common;
 
 /**
  * Un état générique une abstraction pour problème et jeux 

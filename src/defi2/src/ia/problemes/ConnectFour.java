@@ -1,12 +1,13 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.jeux.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.jeux.Game;
-import ia.framework.jeux.GameState;
+
 
 /**
  * Classe qui represente le jeux connect 4 

@@ -1,11 +1,12 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.jeux.GameState;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.jeux.GameState;
+
 
 /**
  * Représente un état du jeux du morpion 

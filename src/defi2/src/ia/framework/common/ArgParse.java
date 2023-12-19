@@ -1,13 +1,10 @@
-package ia.framework.common;
+package defi2.src.ia.framework.common;
+
+import defi2.src.ia.framework.recherche.SearchProblem;
+import defi2.src.ia.problemes.*;
 
 import java.util.Arrays;
 
-import ia.framework.common.*;
-import ia.framework.recherche.*;
-import ia.framework.jeux.*;
-import ia.problemes.*;
-import ia.algo.recherche.*;
-import ia.algo.jeux.*;
 
 /**
  * Quelques méthodes rudimentaires pour lire la ligne de commande

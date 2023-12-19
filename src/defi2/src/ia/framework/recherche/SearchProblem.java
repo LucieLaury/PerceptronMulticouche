@@ -1,14 +1,16 @@
-package ia.framework.recherche;
+package defi2.src.ia.framework.recherche;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.BaseProblem;
+import defi2.src.ia.framework.common.State;
 
 import java.util.ArrayList;
 
-import ia.framework.common.BaseProblem;
-import ia.framework.common.State;
-import ia.framework.common.Action;
+
 
 /**
 * Représente un problème de recherche. 
-* <p> Cette classe hérite de {@link ia.framework.common.BaseProblem}
+* <p> Cette classe hérite de
 * en lui ajoutant le but à chercher et le coût des actions.  
 */
 

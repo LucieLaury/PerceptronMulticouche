@@ -1,12 +1,12 @@
-package ia.framework.jeux;
+package defi2.src.ia.framework.jeux;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.ArgParse;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import ia.framework.common.BaseProblem;
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.common.ArgParse;
+
 
 /**
  * Définie un gestionaire du jeux (Moteur de jeux)

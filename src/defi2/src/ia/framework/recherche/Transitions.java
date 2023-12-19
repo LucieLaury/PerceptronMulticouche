@@ -1,12 +1,14 @@
-package ia.framework.recherche;
+package defi2.src.ia.framework.recherche;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.common.StateActionPair;
 
 import java.util.Map;
 import java.util.HashMap;
 import java.util.Set;
 
-import ia.framework.common.State;
-import ia.framework.common.Action;
-import ia.framework.common.StateActionPair;
+
 
 /**
  * Représentes la liste des transisions entre états

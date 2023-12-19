@@ -1,11 +1,12 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.Misc;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.jeux.GameState;
 
 import java.util.Arrays;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.common.Misc;
-import ia.framework.jeux.GameState;
+
 
 public class ConnectFourState extends GameState {
 

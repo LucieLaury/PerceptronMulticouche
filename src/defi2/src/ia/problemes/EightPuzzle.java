@@ -1,10 +1,12 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.recherche.SearchProblem;
 
 import java.util.ArrayList;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.recherche.SearchProblem;
+
 
 /**
  * Représente le problème du jeu de taquin
