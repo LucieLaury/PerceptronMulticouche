@@ -1,18 +1,13 @@
-package ia.algo.recherche;
+package defi2.src.ia.algo.recherche;
+
+import defi2.src.ia.framework.common.*;
+import defi2.src.ia.framework.recherche.*;
 
 import java.util.Random;
 import java.util.ArrayList;
 
-import ia.framework.common.State;
-import ia.framework.common.Action;
-import ia.framework.common.Misc;
-import ia.framework.common.ArgParse;
 
-import ia.framework.recherche.TreeSearch;
-import ia.framework.recherche.SearchProblem;
-import ia.framework.recherche.SearchNode;
-
-public class RandomSearch extends TreeSearch{
+public class RandomSearch extends TreeSearch {
        
     public RandomSearch(SearchProblem prob, State intial_state){
         super(prob, intial_state);

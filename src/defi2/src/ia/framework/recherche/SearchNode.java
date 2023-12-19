@@ -1,11 +1,12 @@
-package ia.framework.recherche;
+package defi2.src.ia.framework.recherche;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
 
 import java.util.Collections;
 import java.util.ArrayList;
 
-import ia.framework.common.State;
-import ia.framework.common.Action;
-import ia.framework.common.BaseProblem;
+
 
 /**
  * Représente un noeud de l'arbre de recherche
@@ -36,7 +37,7 @@ public class SearchNode {
     /**
      * L'état stocké dans le noeud
      */
-    protected State state; 
+    protected State state;
 
     /**
      * L'action depuis le parent a ici 

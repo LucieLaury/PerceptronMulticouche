@@ -1,8 +1,9 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.recherche.Problem;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.recherche.Problem;
 
 /**
  * Représente le problème de notre robot aspirateur

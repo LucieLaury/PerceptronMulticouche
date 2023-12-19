@@ -1,4 +1,4 @@
-package ia.framework.jeux;
+package defi2.src.ia.framework.jeux;
 
 public class Vehicule {
     

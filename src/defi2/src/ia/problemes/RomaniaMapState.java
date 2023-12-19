@@ -1,16 +1,18 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.recherche.HasHeuristic;
 
 import java.util.Arrays;
 
-import ia.framework.common.State;
-import ia.framework.recherche.HasHeuristic;
+
 
 /**
  * Représente une état du problème du voyage en Roumanie
  *
  */
 
-public class RomaniaMapState extends State implements HasHeuristic{
+public class RomaniaMapState extends State implements HasHeuristic {
 
     
     // Le nom de la ville

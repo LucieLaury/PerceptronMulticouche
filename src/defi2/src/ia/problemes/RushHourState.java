@@ -1,13 +1,14 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.jeux.Vehicule;
 
 import java.util.Arrays;
 import java.util.Collections; 
 import java.util.Random;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.jeux.Vehicule;
-import ia.framework.recherche.HasHeuristic;
+
 
 
 /**

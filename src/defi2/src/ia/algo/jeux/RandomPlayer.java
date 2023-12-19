@@ -1,10 +1,8 @@
-package ia.algo.jeux;
+package defi2.src.ia.algo.jeux;
 
 
-import ia.framework.common.Action;
-import ia.framework.jeux.Game;
-import ia.framework.jeux.GameState;
-import ia.framework.jeux.Player;
+import defi2.src.ia.framework.common.*;
+import defi2.src.ia.framework.jeux.*;
 
 /**
  * Définie un joueurAléatoire

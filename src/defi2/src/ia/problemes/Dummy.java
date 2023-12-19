@@ -1,12 +1,14 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.recherche.Problem;
 
 import java.util.Random;
 import java.util.ArrayList;
 import java.util.List;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.recherche.Problem;
+
 
 /**
  * Représente un problème générique

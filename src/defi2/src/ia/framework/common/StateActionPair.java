@@ -1,4 +1,4 @@
-package ia.framework.common;
+package defi2.src.ia.framework.common;
 
 /**
  * Représente un couple (état, action)

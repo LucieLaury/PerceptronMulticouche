@@ -1,4 +1,8 @@
-package ia.framework.recherche;
+package defi2.src.ia.framework.recherche;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.Misc;
+import defi2.src.ia.framework.common.State;
 
 import java.util.Queue;
 import java.util.HashSet;
@@ -6,9 +10,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
 
-import ia.framework.common.State;
-import ia.framework.common.Action;
-import ia.framework.common.Misc;
+
 
 /**
  * Une classe mère qui représente un algorithme de recherche
@@ -72,7 +74,7 @@ public abstract class TreeSearch {
     public void printSolution() {
         
         // Récupérer la suite d'actions depuis la racine 
-        ArrayList<Action> solution = end_node.getPathFromRoot(); 
+        ArrayList<Action> solution = end_node.getPathFromRoot();
        
         // Afficher des trucs 
         System.out.print("Solution: "+ intial_state+ " > "); 

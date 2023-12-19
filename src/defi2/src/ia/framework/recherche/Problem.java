@@ -1,4 +1,9 @@
-package ia.framework.recherche;
+package defi2.src.ia.framework.recherche;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.Misc;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.common.StateActionPair;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -8,10 +13,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.Collections;
 
-import ia.framework.common.State;
-import ia.framework.common.Action;
-import ia.framework.common.StateActionPair;
-import ia.framework.common.Misc;
+
 
 
 /**
@@ -25,13 +27,13 @@ import ia.framework.common.Misc;
 public abstract class Problem extends SearchProblem {
 
     /**
-     * La liste des états a remplir (voir {@link ia.problemes.Vacuum})
+     * La liste des états a remplir )
      */
     
     protected static State[] STATES = null ;
 
     /**
-     * La liste des transition a remplir (voir {@link ia.problemes.Vacuum})
+     * La liste des transition a remplir (voir)
      */
     protected static Transitions TRANSITIONS = new Transitions();
     

@@ -1,8 +1,9 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.recherche.Problem;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.recherche.Problem;
 
 /**
  * Représentation du problème du voyage en Roumanie
@@ -37,7 +38,7 @@ public class RomaniaMap extends Problem {
 
     // Les différente actions possible  
     
-    static Action GOTO_ARAD           = new Action("goto Arad");   
+    static Action GOTO_ARAD           = new Action("goto Arad");
     static Action GOTO_BUCHAREST      = new Action("goto Bucharest");
     static Action GOTO_CRAIOVA        = new Action("goto Craiova");
     static Action GOTO_DOBRETA        = new Action("goto Dobreta");

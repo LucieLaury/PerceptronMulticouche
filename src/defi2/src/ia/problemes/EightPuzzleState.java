@@ -1,18 +1,19 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
 
 import java.util.Arrays;
 import java.util.Collections; 
 import java.util.Random;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.recherche.HasHeuristic;
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.recherche.HasHeuristic;
+
 
 /**
  * Représente l'état d'un jeux taquin
  * <p>Les transition son réaliser avec </p>  
  */
-public class EightPuzzleState extends State implements HasHeuristic{
+public class EightPuzzleState extends State implements HasHeuristic {
 
     // Le puzzle : tableau de 9 entiers
     // Avec board[0] en haut à gauche board[8] en bas à droite.

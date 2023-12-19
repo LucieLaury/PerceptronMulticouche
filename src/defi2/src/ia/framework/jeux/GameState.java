@@ -1,6 +1,7 @@
-package ia.framework.jeux;
+package defi2.src.ia.framework.jeux;
 
-import ia.framework.common.State;
+
+import defi2.src.ia.framework.common.State;
 
 /**
  * Represente un etat d'un jeux

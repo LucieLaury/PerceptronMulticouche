@@ -1,12 +1,13 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.Action;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.jeux.Game;
+import defi2.src.ia.framework.jeux.GameState;
 
 import java.util.ArrayList;
 import java.util.Scanner;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
-import ia.framework.jeux.Game;
-import ia.framework.jeux.GameState;
 
 /**
  * Classe qui represente le jeux du morpion 
@@ -26,6 +27,7 @@ public class TicTacToe extends Game {
     /**
      * {@inheritDoc}
      * <p>Crée une grille de morpion vide</p>
+     * @return
      */
     public GameState init(){
         return new TicTacToeState();

@@ -1,9 +1,10 @@
-package ia.problemes;
+package defi2.src.ia.problemes;
+
+import defi2.src.ia.framework.common.State;
 
 import java.lang.Integer;
 
-import ia.framework.common.Action;
-import ia.framework.common.State;
+
 
 /**
  * Représente un état du problème générique
