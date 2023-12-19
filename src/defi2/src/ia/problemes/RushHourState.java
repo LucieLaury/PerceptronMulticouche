@@ -9,8 +9,6 @@ import java.util.Collections;
 import java.util.Random;
 
 
-
-
 /**
  * Représente l'état d'un jeu RushHour
  * <p>Les transition sont réalisées avec </p>  
@@ -157,7 +155,12 @@ public class RushHourState extends State {
         int[][] pos = v.getPosition();
         int position = 0;
 		if (a == RushHour.FWD) {
-            if (v.getOrientation() == "horizontal") {        
+            if (v.getOrientation() == "horizontal") {
+                for (int i = 1; i < mouvement+1; i++) {
+                    if (isOccupied(pos[2][0] , pos[2][1] + i)) {
+                        throw Exception = "Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible";
+                    }
+                }        
                 if (v.getNbCasesOccupees() == 3 
                 && (!(isOccupied(pos[2][0], position + mouvement)))) {
                     position = pos[2][1];
@@ -170,6 +173,11 @@ public class RushHourState extends State {
                 }
             } else if (v.getOrientation() == "vertical" 
                 && (!(isOccupied(position - mouvement, pos[0][1])))) {
+                for (int i = 1; i < mouvement+1; i++) {
+                    if (isOccupied(pos[0][0] , pos[2][1] - i)) {
+                        throw Exception = "Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible";
+                    }
+                }    
                 position = pos[0][0];
                 if (!(position - mouvement > 6 || position - mouvement < 1)) {
                     legal = true;
@@ -177,12 +185,22 @@ public class RushHourState extends State {
             }
         } else if (a == RushHour.BWD) {
             if (v.getOrientation() == "horizontal"
-            && (!(isOccupied(pos[0][0], position - mouvement)))) {        
+            && (!(isOccupied(pos[0][0], position - mouvement)))) {
+                for (int i = 1; i < mouvement+1; i++) {
+                    if (isOccupied(pos[0][0] , pos[2][1] - i)) {
+                        throw Exception = "Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible";
+                    }        
+                }
                 position = pos[0][0];
                 if (!(position - mouvement > 6 || position - mouvement < 1)) {
                     legal = true;
                 }
             } else if (v.getOrientation() == "vertical") {
+                for (int i = 1; i < mouvement+1; i++) {
+                    if (isOccupied(pos[2][0] , pos[2][1] + i)) {
+                        throw Exception = "Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible";
+                    }
+                }
                 if (v.getNbCasesOccupees() == 3
                 && (!(isOccupied(position + mouvement, pos[2][1])))) {
                     position = pos[2][1];
@@ -192,7 +210,7 @@ public class RushHourState extends State {
                 } 
                 if (!(position + mouvement > 6 || position + mouvement < 1)) {
                     legal = true;
-                } // problème avec les cases occupées 
+                } 
             }
         }    
         return legal;
@@ -211,20 +229,33 @@ public class RushHourState extends State {
 
         if (v.getOrientation() == "horizontal") {
             if (isLegal(RushHour.FWD, v, mouvement)) {
+                    plateau[pos[0][0]][pos[0][1]] = false;
                     pos[0][1]+=mouvement;
+                    plateau[pos[0][0]][pos[0][1]] = true;
+                    plateau[pos[1][0]][pos[1][1]] = false;
                     pos[1][1]+=mouvement;
+                    plateau[pos[1][0]][pos[1][1]] = true;
                 if (v.getNbCasesOccupees() == 3) {
+                    plateau[pos[2][0]][pos[2][1]] = false;
                     pos[2][1]+=mouvement;
-               }
+                    plateau[pos[2][0]][pos[2][1]] = true;
+                }
             }
         } else if (v.getOrientation() == "vertical") {
                 if (isLegal(RushHour.FWD, v, mouvement)) {
+                    plateau[pos[0][0]][pos[0][1]] = false;
                     pos[0][0]-=mouvement;
+                    plateau[pos[0][0]][pos[0][1]] = true;
+                    plateau[pos[1][0]][pos[1][1]] = false;
                     pos[1][0]-=mouvement;
+                    plateau[pos[1][0]][pos[1][1]] = true;
                 if (v.getNbCasesOccupees() == 3) {
-                    pos[3][0]-=mouvement;
+                    plateau[pos[2][0]][pos[2][1]] = false;
+                    pos[2][0]-=mouvement;
+                    plateau[pos[2][0]][pos[2][1]] = true;
                 }
-            }// update les places occupées....
+            }
+
         }
 	}
 
@@ -241,24 +272,36 @@ public class RushHourState extends State {
 
         if (v.getOrientation() == "horizontal") {
             if (isLegal(RushHour.FWD, v, mouvement)) {
-                    pos[0][1]-=mouvement;
-                    pos[1][1]-=mouvement;
                 if (v.getNbCasesOccupees() == 3) {
+                    plateau[pos[2][0]][pos[2][1]] = false;
                     pos[2][1]-=mouvement;
+                    plateau[pos[2][0]][pos[2][1]] = true;
                }
+                    plateau[pos[1][0]][pos[1][1]] = false;
+                    pos[1][1]-=mouvement;
+                    plateau[pos[1][0]][pos[1][1]] = true;
+                    plateau[pos[0][0]][pos[0][1]] = false;
+                    pos[0][1]-=mouvement;
+                    plateau[pos[0][0]][pos[0][1]] = true;
             }
         } else if (v.getOrientation() == "vertical") {
                 if (isLegal(RushHour.FWD, v, mouvement)) {
-                    pos[0][0]+=mouvement;
-                    pos[1][0]+=mouvement;
-                if (v.getNbCasesOccupees() == 3) {
-                    pos[3][0]+=mouvement;
+                    if (v.getNbCasesOccupees() == 3) {
+                        plateau[pos[2][0]][pos[2][1]] = false;
+                        pos[2][0]+=mouvement;
+                        plateau[pos[2][0]][pos[2][1]] = true;
                 }
+                        plateau[pos[1][0]][pos[1][1]] = false;
+                        pos[1][0]+=mouvement;
+                        plateau[pos[1][0]][pos[1][1]] = true;
+                        plateau[pos[0][0]][pos[0][1]] = false;
+                        pos[0][0]+=mouvement;
+                        plateau[pos[0][0]][pos[0][1]] = true;
             }
         }
 	}
 
-
+/**
     //
     // API privée, manipulation du jeux
     //
@@ -275,7 +318,7 @@ public class RushHourState extends State {
         }
         return result;
     }
-    
+    */ 
 	private boolean isOccupied(int x, int y) {
 		return plateau[x][y];
 	}
@@ -298,4 +341,3 @@ public class RushHourState extends State {
 }
 
     
-}
