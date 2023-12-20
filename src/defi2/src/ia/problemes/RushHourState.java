@@ -5,9 +5,6 @@ import defi2.src.ia.framework.common.State;
 import defi2.src.ia.framework.jeux.Vehicule;
 
 import java.util.Arrays;
-import java.util.Collections; 
-import java.util.Random;
-
 
 /**
  * Représente l'état d'un jeu RushHour
@@ -39,6 +36,19 @@ public class RushHourState extends State {
                 véhicules[2] = v3;
                 véhicules[3] = v4;
                 véhicules[4] = v5;
+                setOccupied(true, 3, 1);
+                setOccupied(true, 3, 2);
+                setOccupied(true, 1, 5);
+                setOccupied(true, 1, 6);
+                setOccupied(true, 4, 1);
+                setOccupied(true, 4, 2);
+                setOccupied(true, 4, 3);
+                setOccupied(true, 1, 3);
+                setOccupied(true, 2, 3);
+                setOccupied(true, 3, 3);
+                setOccupied(true, 4, 6);
+                setOccupied(true, 5, 6);
+                setOccupied(true, 6, 6);
                 break;
             case "intermediate":
                 v1 = new Vehicule("horizontal", 2, new int[][]{{3, 1}, {3, 2}}, true);
@@ -61,6 +71,29 @@ public class RushHourState extends State {
                 véhicules[7] = v8;
                 véhicules[8] = v9;
                 véhicules[9] = v10;
+                setOccupied(true, 3, 1);
+                setOccupied(true, 3, 2);
+                setOccupied(true, 6, 2);
+                setOccupied(true, 6, 3);
+                setOccupied(true, 4, 4);
+                setOccupied(true, 4, 5);
+                setOccupied(true, 5, 5);
+                setOccupied(true, 6, 5);
+                setOccupied(true, 3, 6);
+                setOccupied(true, 4, 6);
+                setOccupied(true, 1, 6);
+                setOccupied(true, 2, 6);
+                setOccupied(true, 1, 4);
+                setOccupied(true, 2, 4);
+                setOccupied(true, 1, 1);
+                setOccupied(true, 1, 2);
+                setOccupied(true, 1, 3);
+                setOccupied(true, 5, 1);
+                setOccupied(true, 5, 2);
+                setOccupied(true, 5, 3);
+                setOccupied(true, 2, 3);
+                setOccupied(true, 3, 3);
+                setOccupied(true, 4, 3);
                 break;
             case "advanced":
                 v1 = new Vehicule("horizontal", 2, new int[][]{{3, 2}, {3, 3}}, true);
@@ -83,6 +116,30 @@ public class RushHourState extends State {
                 véhicules[7] = v8;
                 véhicules[8] = v9;
                 véhicules[9] = v10;
+                setOccupied(true, 3, 2);
+                setOccupied(true, 3, 3);
+                setOccupied(true, 6, 1);
+                setOccupied(true, 6, 2);
+                setOccupied(true, 1, 1);
+                setOccupied(true, 1, 2);
+                setOccupied(true, 5, 6);
+                setOccupied(true, 6, 6);
+                setOccupied(true, 5, 5);
+                setOccupied(true, 6, 5);
+                setOccupied(true, 1, 3);
+                setOccupied(true, 2, 3);
+                setOccupied(true, 5, 1);
+                setOccupied(true, 5, 2);
+                setOccupied(true, 5, 3);
+                setOccupied(true, 4, 4);
+                setOccupied(true, 4, 5);
+                setOccupied(true, 4, 6);
+                setOccupied(true, 1, 4);
+                setOccupied(true, 2, 4);
+                setOccupied(true, 3, 4);
+                setOccupied(true, 2, 1);
+                setOccupied(true, 3, 1);
+                setOccupied(true, 4, 1);
                 break;
             case "expert":
                 v1 = new Vehicule("horizontal", 2, new int[][]{{3, 2}, {3, 3}}, true);
@@ -113,6 +170,37 @@ public class RushHourState extends State {
                 véhicules[11] = v12;
                 véhicules[12] = v13;
                 véhicules[13] = v14;
+                setOccupied(true, 3, 2);
+                setOccupied(true, 3, 3);
+                setOccupied(true, 4, 2);
+                setOccupied(true, 4, 3);
+                setOccupied(true, 6, 1);
+                setOccupied(true, 6, 2);
+                setOccupied(true, 1, 3);
+                setOccupied(true, 1, 4);
+                setOccupied(true, 1, 1);
+                setOccupied(true, 2, 1);
+                setOccupied(true, 1, 2);
+                setOccupied(true, 2, 2);
+                setOccupied(true, 1, 5);
+                setOccupied(true, 2, 5);
+                setOccupied(true, 1, 6);
+                setOccupied(true, 2, 6);
+                setOccupied(true, 3, 6);
+                setOccupied(true, 4, 6);
+                setOccupied(true, 3, 4);
+                setOccupied(true, 4, 4);
+                setOccupied(true, 5, 3);
+                setOccupied(true, 6, 3);
+                setOccupied(true, 5, 4);
+                setOccupied(true, 5, 5);
+                setOccupied(true, 5, 6);
+                setOccupied(true, 6, 4);
+                setOccupied(true, 6, 5);
+                setOccupied(true, 6, 6);
+                setOccupied(true, 3, 1);
+                setOccupied(true, 4, 1);
+                setOccupied(true, 5, 1);
                 break;
         }
         this.véhicules = tempvéhicules;
@@ -148,9 +236,10 @@ public class RushHourState extends State {
      * Test la possibilité de faire une action dans cet état
      * @param a L'action à tester
      * @return Vrai si l'action est possible  
+     * @throws Exception
      */
     
-    public boolean isLegal(Action a, Vehicule v, int mouvement){
+    public boolean isLegal(Action a, Vehicule v, int mouvement) throws Exception{
         boolean legal = false;
         int[][] pos = v.getPosition();
         int position = 0;
@@ -158,7 +247,7 @@ public class RushHourState extends State {
             if (v.getOrientation() == "horizontal") {
                 for (int i = 1; i < mouvement+1; i++) {
                     if (isOccupied(pos[2][0] , pos[2][1] + i)) {
-                        throw Exception = "Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible";
+                        throw new Exception("Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible");
                     }
                 }        
                 if (v.getNbCasesOccupees() == 3 
@@ -175,7 +264,7 @@ public class RushHourState extends State {
                 && (!(isOccupied(position - mouvement, pos[0][1])))) {
                 for (int i = 1; i < mouvement+1; i++) {
                     if (isOccupied(pos[0][0] , pos[2][1] - i)) {
-                        throw Exception = "Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible";
+                        throw new Exception("Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible");
                     }
                 }    
                 position = pos[0][0];
@@ -188,7 +277,7 @@ public class RushHourState extends State {
             && (!(isOccupied(pos[0][0], position - mouvement)))) {
                 for (int i = 1; i < mouvement+1; i++) {
                     if (isOccupied(pos[0][0] , pos[2][1] - i)) {
-                        throw Exception = "Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible";
+                        throw new Exception("Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible");
                     }        
                 }
                 position = pos[0][0];
@@ -198,7 +287,7 @@ public class RushHourState extends State {
             } else if (v.getOrientation() == "vertical") {
                 for (int i = 1; i < mouvement+1; i++) {
                     if (isOccupied(pos[2][0] , pos[2][1] + i)) {
-                        throw Exception = "Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible";
+                        throw new Exception("Erreur: Un véhicule occupe déjà cette place, le mouvement est impossible");
                     }
                 }
                 if (v.getNbCasesOccupees() == 3
@@ -218,9 +307,10 @@ public class RushHourState extends State {
 
     /**
      * Déplacer le véhicule vers l'avant
+     * @throws Exception
      */
     
-    public void moveFWD(int mouvement, Vehicule v) {
+    public void moveFWD(int mouvement, Vehicule v) throws Exception {
         // avancer de nbCases (mouvement) vers l'avant
         // si horizontal, avancer vers la droite (+, y)
         // si vertical, avancer vers le haut (-, x)
@@ -229,30 +319,30 @@ public class RushHourState extends State {
 
         if (v.getOrientation() == "horizontal") {
             if (isLegal(RushHour.FWD, v, mouvement)) {
-                    plateau[pos[0][0]][pos[0][1]] = false;
+                    setOccupied(false, pos[0][0], pos[0][1]);
                     pos[0][1]+=mouvement;
-                    plateau[pos[0][0]][pos[0][1]] = true;
-                    plateau[pos[1][0]][pos[1][1]] = false;
+                    setOccupied(true, pos[0][0], pos[0][1]);
+                    setOccupied(false, pos[1][0], pos[1][1]);
                     pos[1][1]+=mouvement;
-                    plateau[pos[1][0]][pos[1][1]] = true;
+                    setOccupied(true, pos[1][0], pos[1][1]);
                 if (v.getNbCasesOccupees() == 3) {
-                    plateau[pos[2][0]][pos[2][1]] = false;
+                    setOccupied(false, pos[2][0], pos[2][1]);
                     pos[2][1]+=mouvement;
-                    plateau[pos[2][0]][pos[2][1]] = true;
+                    setOccupied(true, pos[2][0], pos[2][1]);
                 }
             }
         } else if (v.getOrientation() == "vertical") {
                 if (isLegal(RushHour.FWD, v, mouvement)) {
-                    plateau[pos[0][0]][pos[0][1]] = false;
+                    setOccupied(false, pos[0][0], pos[0][1]);
                     pos[0][0]-=mouvement;
-                    plateau[pos[0][0]][pos[0][1]] = true;
-                    plateau[pos[1][0]][pos[1][1]] = false;
+                    setOccupied(true, pos[0][0], pos[0][1]);
+                    setOccupied(false, pos[1][0], pos[1][1]);
                     pos[1][0]-=mouvement;
-                    plateau[pos[1][0]][pos[1][1]] = true;
+                    setOccupied(true, pos[1][0], pos[1][1]);
                 if (v.getNbCasesOccupees() == 3) {
-                    plateau[pos[2][0]][pos[2][1]] = false;
+                    setOccupied(false, pos[2][0], pos[2][1]);
                     pos[2][0]-=mouvement;
-                    plateau[pos[2][0]][pos[2][1]] = true;
+                    setOccupied(true, pos[2][0], pos[2][1]);
                 }
             }
 
@@ -261,9 +351,10 @@ public class RushHourState extends State {
 
     /**
      * Déplacer le véhicule vers l'arrière 
+     * @throws Exception
      */
     
-	public void moveBWD(int mouvement, Vehicule v) {
+	public void moveBWD(int mouvement, Vehicule v) throws Exception {
         // avancer de nbCases (mouvement) vers l'arrière
         // si horizontal, avancer vers la gauche (-, y)
         // si vertical, avancer vers le bas (+, x)
@@ -273,52 +364,34 @@ public class RushHourState extends State {
         if (v.getOrientation() == "horizontal") {
             if (isLegal(RushHour.FWD, v, mouvement)) {
                 if (v.getNbCasesOccupees() == 3) {
-                    plateau[pos[2][0]][pos[2][1]] = false;
+                    setOccupied(false, pos[2][0], pos[2][1]);
                     pos[2][1]-=mouvement;
-                    plateau[pos[2][0]][pos[2][1]] = true;
+                    setOccupied(true, pos[2][0], pos[2][1]);
                }
-                    plateau[pos[1][0]][pos[1][1]] = false;
+                    setOccupied(false, pos[1][0], pos[1][1]);
                     pos[1][1]-=mouvement;
-                    plateau[pos[1][0]][pos[1][1]] = true;
-                    plateau[pos[0][0]][pos[0][1]] = false;
+                    setOccupied(true, pos[1][0], pos[1][1]);
+                    setOccupied(false, pos[0][0], pos[0][1]);
                     pos[0][1]-=mouvement;
-                    plateau[pos[0][0]][pos[0][1]] = true;
+                    setOccupied(true, pos[0][0], pos[0][1]);
             }
         } else if (v.getOrientation() == "vertical") {
                 if (isLegal(RushHour.FWD, v, mouvement)) {
                     if (v.getNbCasesOccupees() == 3) {
-                        plateau[pos[2][0]][pos[2][1]] = false;
+                        setOccupied(false, pos[2][0], pos[2][1]);
                         pos[2][0]+=mouvement;
-                        plateau[pos[2][0]][pos[2][1]] = true;
+                        setOccupied(true, pos[2][0], pos[2][1]);
                 }
-                        plateau[pos[1][0]][pos[1][1]] = false;
+                        setOccupied(false, pos[1][0], pos[1][1]);
                         pos[1][0]+=mouvement;
-                        plateau[pos[1][0]][pos[1][1]] = true;
-                        plateau[pos[0][0]][pos[0][1]] = false;
+                        setOccupied(true, pos[1][0], pos[1][1]);
+                        setOccupied(false, pos[0][0], pos[0][1]);
                         pos[0][0]+=mouvement;
-                        plateau[pos[0][0]][pos[0][1]] = true;
+                        setOccupied(true, pos[0][0], pos[0][1]);
             }
         }
 	}
 
-/**
-    //
-    // API privée, manipulation du jeux
-    //
-    
-    // Calcule la distance entre le puzzle et la solution
-    // https://en.wikipedia.org/wiki/Taxicab_geometry
-    private double manathanDistance(){
-        double result = 0;
-		for (int val = 1; val <= 8; val++) {
-			int locCurr = getPositionOf(val);
-			int locGoal = EightPuzzle.GOAL_STATE.getPositionOf(val);
-			result += Math.abs(getXCoord(locGoal)-getXCoord(locCurr));
-			result += Math.abs(getYCoord(locGoal)-getYCoord(locCurr));
-        }
-        return result;
-    }
-    */ 
 	private boolean isOccupied(int x, int y) {
 		return plateau[x][y];
 	}
@@ -336,8 +409,7 @@ public class RushHourState extends State {
 
 	private void setOccupied(boolean occupé, int x, int y) {
 		plateau[x][y] = occupé;
-	}
-    
+	}    
 }
 
     
