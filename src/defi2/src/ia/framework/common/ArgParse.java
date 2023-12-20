@@ -1,6 +1,12 @@
 package defi2.src.ia.framework.common;
 
+import defi2.src.ia.algo.jeux.HumanPlayer;
+import defi2.src.ia.algo.jeux.RandomPlayer;
+import defi2.src.ia.algo.recherche.RandomSearch;
+import defi2.src.ia.framework.jeux.Game;
+import defi2.src.ia.framework.jeux.Player;
 import defi2.src.ia.framework.recherche.SearchProblem;
+import defi2.src.ia.framework.recherche.TreeSearch;
 import defi2.src.ia.problemes.*;
 
 import java.util.Arrays;

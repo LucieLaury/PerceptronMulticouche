@@ -1,12 +1,10 @@
-import ia.framework.common.ArgParse;
+package defi2.src;
 
-import ia.framework.jeux.Game;
-import ia.framework.jeux.GameState;
-import ia.framework.jeux.GameEngine;
-import ia.framework.jeux.Player;
-
-
-import ia.problemes.*; 
+import defi2.src.ia.framework.common.ArgParse;
+import defi2.src.ia.framework.jeux.Game;
+import defi2.src.ia.framework.jeux.GameEngine;
+import defi2.src.ia.framework.jeux.GameState;
+import defi2.src.ia.framework.jeux.Player;
 
 /**
  * Lance un une partie de jeux donné et affiche le resultat

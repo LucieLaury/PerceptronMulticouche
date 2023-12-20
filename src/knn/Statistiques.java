@@ -15,21 +15,16 @@ public class Statistiques {
 
     }
 
-    public static void stat_knn(KNN algo, Imagette[] imagettes, int distance) {
+    public static void stat_knn(KNN algo, Imagette[] imagettes) {
         int valides = 0;
         /// A FAIRE
         for (int i = 0; i < imagettes.length; i++) {
             System.out.println(i+1);
-            final int etiquette = imagettes[i].getEtiquette();
 
             // Retourne un tableau d'entiers et incrémente le compteur si tous les éléments sont égaux à l'étiquette
-            int[] temp = algo.kPlusProches(imagettes[i], distance);
-
-            // Vérifie si tous les éléments de temp sont égaux à l'étiquette de l'imagette
-            if (Arrays.stream(temp).allMatch(nb -> nb == etiquette)) {
-                valides++; // Incrémente le compteur de valides
-            }
+            if (imagettes[i].getEtiquette() == algo.predictLabel(imagettes[i]))
+                valides++;
         }
-        System.out.println( ((double) valides / imagettes.length * 100)+"% de reussite avec le(s) "+distance+" plus proche(s) voisin(s)");
+        System.out.println( ((double) valides / imagettes.length * 100)+"% de reussite avec le(s) "+algo.k+" plus proche(s) voisin(s)");
     }
 }

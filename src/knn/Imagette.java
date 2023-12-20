@@ -39,6 +39,17 @@ public class Imagette {
         return etiquette;
     }
 
+    // Calcule la différence de couleur entre deux imagettes
+    public int diffCouleur(Imagette img){
+        int dist = 0;
+        for (int i = 0; i < this.pixels.length; i++) {
+            for (int j = 0; j < this.pixels[0].length; j++) {
+                dist += Math.abs(this.pixels[i][j] - img.pixels[i][j]);
+            }
+        }
+        return dist;
+    }
+
     // Permet de charger une imagette
     public static Imagette[] chargerImagettes(String nomFichierI,String nomFichierE) {
         try (FileInputStream fichier = new FileInputStream(nomFichierI);

@@ -3,6 +3,9 @@ package mlp;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * PROGRAMME PRINCIPAL POUR LA PARTIE - Un peu de programmation ?
+ */
 public class Main {
 
     public static void main(String[] args) {
