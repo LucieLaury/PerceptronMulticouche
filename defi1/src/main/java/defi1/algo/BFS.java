@@ -47,6 +47,7 @@ public class BFS extends TreeSearch {
             if (problem.isGoalState(state)) {
                 end_node = node;
                 frontier = new ArrayList<>(); // ????
+                return true;
             } else {
                 explored.add(state);
                 // Les actions possibles depuis cette état
@@ -63,6 +64,6 @@ public class BFS extends TreeSearch {
 
         }
 
-        return true;
+        return false;
     }
 }

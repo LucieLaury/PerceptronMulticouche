@@ -11,6 +11,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="defi1" target="17" />
+      <module name="defi2" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

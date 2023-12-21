@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PerceptronMulticouche.iml" filepath="$PROJECT_DIR$/PerceptronMulticouche.iml" />
       <module fileurl="file://$PROJECT_DIR$/defi1/defi1.iml" filepath="$PROJECT_DIR$/defi1/defi1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/defi2/defi2.iml" filepath="$PROJECT_DIR$/defi2/defi2.iml" />
     </modules>
   </component>
 </project>

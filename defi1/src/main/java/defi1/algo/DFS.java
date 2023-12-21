@@ -47,6 +47,7 @@ public class DFS extends TreeSearch {
             if (problem.isGoalState(state)) {
                 end_node = node;
                 frontier = new ArrayList<>(); // ????
+                return true;
             } else {
                 explored.add(state);
                 ArrayList<SearchNode> temp = new ArrayList<>();
@@ -64,7 +65,7 @@ public class DFS extends TreeSearch {
 
         }
 
-        return true;
+        return false;
     }
 
 }
