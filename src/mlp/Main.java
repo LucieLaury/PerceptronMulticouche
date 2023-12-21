@@ -3,6 +3,9 @@ package mlp;
 import java.util.Arrays;
 import java.util.Random;
 
+/**
+ * PROGRAMME PRINCIPAL POUR LA PARTIE - Un peu de programmation ?
+ */
 public class Main {
 
     public static void main(String[] args) {
@@ -53,7 +56,7 @@ public class Main {
 
         // Par défaut, deux entrées, un de calcul et un de sortie
         // Ces valeurs seront modifiées pour certaines applications (XOR et les deux sorties notamment)
-        int[] layers = new int[]{2,1,1};
+        int[] layers = new int[]{2,1,2};
         double learningRate = 0.1;
         MLP mlp = new MLP(layers,learningRate,tf);
 
@@ -82,8 +85,8 @@ public class Main {
         }
         System.out.println("Nombre d'iterations : "+i);
         if (resultsFound) System.out.println("Tous les exemples sont passes");
-        //System.out.println("VALEURS MLP : ");
-        //printMLP(mlp);
+        System.out.println("VALEURS MLP : ");
+        printMLP(mlp);
     }
 
     public static void learn(MLP mlp, double[][] currentTable, int nbSorties) {

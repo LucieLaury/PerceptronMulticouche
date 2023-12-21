@@ -5,20 +5,26 @@ import mlp.Sigmoide;
 import mlp.TangenteHyperbolique;
 import mlp.TransferFunction;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
 import static knn.Imagette.chargerImagettes;
 
+/**
+ * PROGRAMME PRINCIPAL POUR LA PARTIE - MLP vs KNN
+ */
 public class MLPvsKNN {
 
     public static void main(String[] args) {
 
         Imagette[] imagettes;
         Imagette[] imagettes_tests;
-        imagettes = chargerImagettes("files/train-images.idx3-ubyte", "files/train-labels.idx1-ubyte");
-        imagettes_tests = chargerImagettes("files/t10k-images.idx3-ubyte","files/t10k-labels.idx1-ubyte");
+        //imagettes = chargerImagettes("files/chiffres/train-images.idx3-ubyte", "files/chiffres/train-labels.idx1-ubyte");
+        //imagettes_tests = chargerImagettes("files/chiffres/t10k-images.idx3-ubyte","files/chiffres/t10k-labels.idx1-ubyte");
+        imagettes = chargerImagettes("files/fashion/train-images-idx3-ubyte", "files/fashion/train-labels-idx1-ubyte");
+        imagettes_tests = chargerImagettes("files/fashion/t10k-images-idx3-ubyte","files/fashion/t10k-labels-idx1-ubyte");
 
         TransferFunction tf = switch (args[1]) {
             case "th" -> new TangenteHyperbolique();
@@ -27,10 +33,14 @@ public class MLPvsKNN {
         };
 
         // Afficher les résultats de KNN
-        // Statistiques.stat_knn(new KNN(new Donnees(imagettes)), imagettes_tests, 1);
+        //try {
+        //    Statistiques.stat_knn(new KNN(10 , new Donnees(imagettes)), imagettes_tests);
+        //} catch (IOException e) {
+        //    throw new RuntimeException(e);
+        //}
 
         // MLP
-        int[] layers = new int[]{imagettes[0].getHeight() * imagettes[0].getWidth(), 50, 50 ,10};
+        int[] layers = new int[]{imagettes[0].getHeight() * imagettes[0].getWidth(), 150 ,10};
         double learningRate = 0.5;
         MLP mlp = new MLP(layers, learningRate, tf);
 
@@ -38,10 +48,10 @@ public class MLPvsKNN {
         boolean valide = false;
         while (i < Integer.parseInt(args[0]) && !valide) {
             learn(mlp, imagettes);
-            valide = test(mlp, imagettes_tests);
+            valide = test(mlp, imagettes);
             i++;
-            shuffleArray(imagettes_tests);
-            shuffleArray(imagettes);
+            //shuffleArray(imagettes_tests);
+            //shuffleArray(imagettes);
         }
     }
 
@@ -112,13 +122,14 @@ public class MLPvsKNN {
             if (resultat_attendu.get(i)[indice_pg] == 1.) {
                 compteurValide++;
             }
-            // Condition d'arrêt == si il y'a moins de 95% de réussite
+            // Condition d'arrêt 1 == si il y'a moins de 98% de réussite
             if (i - compteurValide > resultat.size() * 0.02) {
                 System.out.println("Bonnes reponses : " + compteurValide + "/" + i);
                 System.out.println("Il y'a moins de 98% de reussite donc c'est un ECHEC");
                 return false;
             }
         }
+        // Sinon programme réussi == Condition d'arrêt 2 (le perceptron a plus de 98% de réussite)
         System.out.println("REUSSITE");
         return true;
     }

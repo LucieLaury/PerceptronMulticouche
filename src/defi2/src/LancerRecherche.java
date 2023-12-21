@@ -1,9 +1,9 @@
-import ia.framework.common.ArgParse;
-import ia.framework.common.State;
-import ia.framework.recherche.SearchProblem;
-import ia.framework.recherche.TreeSearch;
+package defi2.src;
 
-import ia.problemes.*; 
+import defi2.src.ia.framework.common.ArgParse;
+import defi2.src.ia.framework.common.State;
+import defi2.src.ia.framework.recherche.SearchProblem;
+import defi2.src.ia.framework.recherche.TreeSearch;
 
 /**
  * Lance un algorithme de recherche  
